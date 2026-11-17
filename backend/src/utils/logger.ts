@@ -1,0 +1,10 @@
+const timestamp = () => new Date().toISOString();
+
+const logger = {
+  info: (msg: string, ...args: unknown[]) => console.log(`[${timestamp()}] [INFO]`, msg, ...args),
+  error: (msg: string, ...args: unknown[]) => console.error(`[${timestamp()}] [ERROR]`, msg, ...args),
+  warn: (msg: string, ...args: unknown[]) => console.warn(`[${timestamp()}] [WARN]`, msg, ...args),
+  debug: (msg: string, ...args: unknown[]) => console.debug(`[${timestamp()}] [DEBUG]`, msg, ...args),
+};
+
+export default logger;

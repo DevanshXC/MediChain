@@ -1,0 +1,31 @@
+-- Seed 004: Hospitals
+USE medichain;
+
+INSERT INTO hospitals (id, user_id, hospital_code, name, registration_number, address, phone, email, website, specialty_areas, blockchain_tx_hash, approved_at) VALUES
+(1, 17, 'HOSP001', 'City General Hospital',
+  'REG-IL-2010-00147',
+  '500 N Michigan Ave, Chicago, IL 60611',
+  '+1-312-555-0300',
+  'info@citygeneral.com',
+  'https://www.citygeneral.com',
+  'Cardiology,Orthopedics,Emergency Medicine,Internal Medicine',
+  '0xdddd4444eeee5555ffff6666aaaa1111bbbb2222cccc3333dddd4444eeee5555',
+  NOW()),
+(2, 18, 'HOSP002', 'Metro Medical Center',
+  'REG-IL-2008-00293',
+  '1200 W Harrison St, Chicago, IL 60607',
+  '+1-312-555-0301',
+  'admin@metromedical.com',
+  'https://www.metromedical.com',
+  'Neurology,Oncology,Radiology,Surgery',
+  '0xeeee5555ffff6666aaaa1111bbbb2222cccc3333dddd4444eeee5555ffff6666',
+  NOW()),
+(3, 19, 'HOSP003', 'St. Luke''s Healthcare',
+  'REG-IL-2015-00581',
+  '1801 W Taylor St, Chicago, IL 60612',
+  '+1-312-555-0302',
+  'contact@stlukes.com',
+  'https://www.stlukes.com',
+  'Pediatrics,Obstetrics,Family Medicine,Rehabilitation',
+  '0xffff6666aaaa1111bbbb2222cccc3333dddd4444eeee5555ffff6666aaaa1111',
+  NOW());

@@ -1,0 +1,32 @@
+{
+  "name": "medichain-ecosystem",
+  "version": "1.0.0",
+  "description": "MediChain — Decentralized Healthcare Records and Patient Consent Management System",
+  "scripts": {
+    "blockchain:compile": "cd blockchain && npx hardhat compile",
+    "blockchain:test": "cd blockchain && npx hardhat test",
+    "blockchain:node": "cd blockchain && npx hardhat node",
+    "blockchain:deploy": "cd blockchain && npx hardhat run scripts/deploy.js --network localhost",
+    "backend:dev": "cd backend && npm run dev",
+    "backend:build": "cd backend && npm run build",
+    "frontend:dev": "cd frontend && npm run dev",
+    "frontend:build": "cd frontend && npm run build",
+    "db:migrate": "cd database && node migrate.js",
+    "seed:demo": "node scripts/seedDemoBlockchainData.js",
+    "test:e2e": "node test-e2e.js"
+  },
+  "keywords": [
+    "healthcare",
+    "blockchain",
+    "ethereum",
+    "solidity",
+    "hardhat",
+    "siwe",
+    "medical-records",
+    "aes-256-gcm",
+    "consent-management"
+  ],
+  "author": "MediChain Team",
+  "license": "MIT"
+}
+
