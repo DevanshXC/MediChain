@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { WalletProvider } from './context/WalletContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { Layout } from './components/layout/Layout';
+import { ErrorBoundary } from './components/common/ErrorBoundary';
 
 // Public pages
 import { Landing } from './pages/Landing';
@@ -67,9 +68,10 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode; allowedRoles?: strin
 
 export function App() {
   return (
-    <Router>
-      <WalletProvider>
-        <AuthProvider>
+    <ErrorBoundary>
+      <Router>
+        <WalletProvider>
+          <AuthProvider>
           <Routes>
             {/* Public */}
             <Route path="/" element={<Landing />} />
@@ -149,6 +151,7 @@ export function App() {
         </AuthProvider>
       </WalletProvider>
     </Router>
+  </ErrorBoundary>
   );
 }
 

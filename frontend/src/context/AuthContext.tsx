@@ -18,9 +18,29 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
   const [token, setToken] = useState<string | null>(() => localStorage.getItem('medichain_token'));
-  const [isLoading, setIsLoading] = useState(false);
+  const [user, setUser] = useState<User | null>(() => {
+    const stored = localStorage.getItem('medichain_token');
+    if (!stored) return null;
+    try {
+      const parts = stored.split('.');
+      if (parts[1]) {
+        const decoded = JSON.parse(atob(parts[1]));
+        return {
+          id: decoded.id,
+          walletAddress: decoded.walletAddress,
+          role: decoded.role,
+          status: decoded.status,
+        } as User;
+      }
+    } catch {
+      return null;
+    }
+    return null;
+  });
+  const [isLoading, setIsLoading] = useState<boolean>(() => {
+    return !!localStorage.getItem('medichain_token') && !user;
+  });
   const [error, setError] = useState<string | null>(null);
 
   const loadProfile = useCallback(async () => {

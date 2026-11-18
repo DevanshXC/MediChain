@@ -13,7 +13,7 @@ const router = Router();
  */
 router.get('/stats', authenticateToken, requireRole('admin'), async (_req: Request, res: Response): Promise<void> => {
   try {
-    const [userCounts] = await query<RowDataPacket[]>(
+    const userRows = await query<RowDataPacket[]>(
       `SELECT 
          COUNT(*) as total_users,
          SUM(role = 'patient') as total_patients,
@@ -24,28 +24,28 @@ router.get('/stats', authenticateToken, requireRole('admin'), async (_req: Reque
        FROM users`
     );
 
-    const [recordCounts] = await query<RowDataPacket[]>(
+    const recordRows = await query<RowDataPacket[]>(
       `SELECT COUNT(*) as total_records FROM medical_records`
     );
 
-    const [accessCounts] = await query<RowDataPacket[]>(
+    const accessRows = await query<RowDataPacket[]>(
       `SELECT 
          COUNT(*) as total_requests,
          SUM(status = 'approved') as active_permissions
        FROM access_requests`
     );
 
-    const [categoryCounts] = await query<RowDataPacket[]>(
+    const categoryCounts = await query<RowDataPacket[]>(
       `SELECT category, COUNT(*) as count FROM medical_records GROUP BY category`
     );
 
     res.json({
       success: true,
       data: {
-        users: userCounts,
-        records: recordCounts,
-        access: accessCounts,
-        categories: categoryCounts,
+        users: userRows[0] || {},
+        records: recordRows[0] || {},
+        access: accessRows[0] || {},
+        categories: categoryCounts || [],
       },
     });
   } catch (err: any) {

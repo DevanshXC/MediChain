@@ -33,8 +33,8 @@ export const AdminDashboard: React.FC = () => {
   const totalRecords = stats?.records?.total_records || 0;
   const activePermissions = stats?.access?.active_permissions || 0;
 
-  const categoryChartData = (stats?.categories || []).map((c: any) => ({
-    name: c.category?.toUpperCase() || 'OTHER',
+  const categoryChartData = (Array.isArray(stats?.categories) ? stats.categories : []).map((c: any) => ({
+    name: c.category ? String(c.category).toUpperCase() : 'OTHER',
     value: Number(c.count) || 1,
   }));
 
