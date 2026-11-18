@@ -20,7 +20,7 @@ const defaultData = [
   { name: 'Discharge', value: 3 },
 ];
 
-const COLORS = ['#0d9488', '#2563eb', '#f59e0b', '#8b5cf6', '#ec4899', '#06b6d4'];
+const COLORS = ['#2563eb', '#06b6d4', '#0284c7', '#4f46e5', '#38bdf8', '#8b5cf6'];
 
 export const RecordsCategoryChart: React.FC<CategoryChartProps> = ({ data = defaultData }) => {
   const chartData = data.length > 0 ? data : defaultData;

@@ -76,12 +76,12 @@ export const Sidebar: React.FC = () => {
       <div>
         {/* Brand */}
         <div className="h-16 flex items-center px-6 gap-3 border-b border-slate-800">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-teal-500 to-teal-400 flex items-center justify-center text-slate-950 shadow-md shadow-teal-500/20 font-bold">
-            <Activity className="w-5 h-5 text-slate-950" />
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center text-white shadow-md shadow-blue-500/25 font-bold">
+            <Activity className="w-5 h-5 text-white" />
           </div>
           <div>
             <h1 className="text-base font-bold text-white tracking-tight">MediChain</h1>
-            <p className="text-[10px] text-teal-400 font-medium uppercase tracking-wider">Healthcare Web3</p>
+            <p className="text-[10px] text-cyan-400 font-medium uppercase tracking-wider">Healthcare Web3</p>
           </div>
         </div>
 
@@ -99,7 +99,7 @@ export const Sidebar: React.FC = () => {
                 className={({ isActive }) =>
                   `flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-medium transition-all ${
                     isActive
-                      ? 'bg-teal-500/10 text-teal-400 font-semibold border border-teal-500/20'
+                      ? 'bg-blue-500/10 text-cyan-400 font-semibold border border-blue-500/20'
                       : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
                   }`
                 }
@@ -115,7 +115,7 @@ export const Sidebar: React.FC = () => {
       {/* Footer Profile & Logout */}
       <div className="p-4 border-t border-slate-800">
         <div className="p-3 bg-slate-800/50 rounded-xl mb-3 flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-teal-400 font-bold text-xs uppercase">
+          <div className="w-8 h-8 rounded-full bg-slate-800 border border-blue-500/30 flex items-center justify-center text-cyan-400 font-bold text-xs uppercase">
             {user?.role?.slice(0, 2) || 'MC'}
           </div>
           <div className="min-w-0 flex-1">

@@ -44,13 +44,13 @@ export const AuditMonitor: React.FC = () => {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search audit trail by description or actor address..."
-            className="w-full pl-10 pr-4 py-2 bg-white border border-slate-200 rounded-xl text-xs focus:outline-teal-500"
+            className="w-full pl-10 pr-4 py-2 bg-white border border-slate-200 rounded-xl text-xs focus:outline-blue-500"
           />
         </div>
         <select
           value={eventFilter}
           onChange={(e) => setEventFilter(e.target.value)}
-          className="px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs focus:outline-teal-500 font-medium text-slate-700"
+          className="px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs focus:outline-blue-500 font-medium text-slate-700"
         >
           <option value="all">All Event Types</option>
           <option value="RECORD_CREATED">Record Created</option>

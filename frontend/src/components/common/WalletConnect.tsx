@@ -15,7 +15,7 @@ export const WalletConnect: React.FC = () => {
         disabled
         className="flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-500 rounded-lg text-sm font-medium"
       >
-        <Loader2 className="w-4 h-4 animate-spin text-teal-600" />
+        <Loader2 className="w-4 h-4 animate-spin text-blue-600" />
         Connecting...
       </button>
     );
@@ -51,7 +51,7 @@ export const WalletConnect: React.FC = () => {
         onClick={connectWallet}
         className="flex items-center gap-2 px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-sm font-medium shadow-sm transition"
       >
-        <Wallet className="w-4 h-4 text-teal-400" />
+        <Wallet className="w-4 h-4 text-cyan-400" />
         Connect Wallet
       </button>
       {error && <span className="text-xs text-rose-500 mt-1 max-w-xs text-right truncate">{error}</span>}

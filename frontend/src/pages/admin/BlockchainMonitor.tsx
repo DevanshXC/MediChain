@@ -31,7 +31,7 @@ export const BlockchainMonitor: React.FC = () => {
         <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
           <span className="text-[10px] text-slate-400 block uppercase font-semibold">Active Blockchain</span>
           <h3 className="text-base font-bold text-slate-900 flex items-center gap-1.5 mt-1">
-            <Globe className="w-4 h-4 text-teal-600" />
+            <Globe className="w-4 h-4 text-blue-600" />
             {CHAIN_NAME} (Chain ID: {CHAIN_ID})
           </h3>
           <p className="text-[11px] text-slate-500 font-mono mt-1">{RPC_URL}</p>
@@ -40,7 +40,7 @@ export const BlockchainMonitor: React.FC = () => {
         <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
           <span className="text-[10px] text-slate-400 block uppercase font-semibold">Consensus Mechanism</span>
           <h3 className="text-base font-bold text-slate-900 flex items-center gap-1.5 mt-1">
-            <Shield className="w-4 h-4 text-teal-600" />
+            <Shield className="w-4 h-4 text-blue-600" />
             Proof of Authority / Local EVM
           </h3>
           <p className="text-[11px] text-slate-500 mt-1">Solidity ^0.8.24 (Paris target)</p>
@@ -49,7 +49,7 @@ export const BlockchainMonitor: React.FC = () => {
         <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
           <span className="text-[10px] text-slate-400 block uppercase font-semibold">Smart Contract Modules</span>
           <h3 className="text-base font-bold text-slate-900 flex items-center gap-1.5 mt-1">
-            <CheckCircle className="w-4 h-4 text-teal-600" />
+            <CheckCircle className="w-4 h-4 text-blue-600" />
             4 Modular Contracts Active
           </h3>
           <p className="text-[11px] text-slate-500 mt-1">Registry, Records, Access, Audit</p>

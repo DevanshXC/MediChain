@@ -41,7 +41,7 @@ export const ActivityChart: React.FC<ActivityChartProps> = ({ data = defaultData
             }}
             cursor={{ fill: '#f8fafc' }}
           />
-          <Bar dataKey="count" fill="#0d9488" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="count" fill="#2563eb" radius={[6, 6, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
     </div>

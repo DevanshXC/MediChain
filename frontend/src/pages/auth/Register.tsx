@@ -78,11 +78,17 @@ export const Register: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 py-12 px-6 flex flex-col justify-center items-center font-sans">
-      <div className="w-full max-w-xl bg-white rounded-3xl shadow-2xl p-8 border border-slate-100">
+    <div className="min-h-screen bg-[#070D1E] py-12 px-6 flex flex-col justify-center items-center font-sans relative overflow-hidden">
+      {/* Background ambient glow */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-blue-600/[0.12] blur-[140px]" />
+        <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-cyan-500/[0.08] blur-[140px]" />
+      </div>
+
+      <div className="w-full max-w-xl bg-white rounded-3xl shadow-2xl p-8 border border-slate-100 relative z-10">
         <div className="flex flex-col items-center text-center mb-6">
-          <div className="w-12 h-12 rounded-2xl bg-teal-500 flex items-center justify-center text-slate-950 font-bold mb-3 shadow-lg shadow-teal-500/20">
-            <Activity className="w-7 h-7 text-slate-950" />
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center text-white font-bold mb-3 shadow-lg shadow-blue-500/25">
+            <Activity className="w-7 h-7 text-white" />
           </div>
           <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Create MediChain Profile</h2>
           <p className="text-xs text-slate-500 mt-1">
@@ -416,7 +422,7 @@ export const Register: React.FC = () => {
           <button
             type="submit"
             disabled={loading || !isConnected}
-            className="w-full mt-4 flex items-center justify-center gap-2 py-3.5 px-4 bg-teal-600 hover:bg-teal-500 text-white rounded-xl text-sm font-semibold transition shadow-md shadow-teal-600/20 disabled:opacity-50"
+            className="w-full mt-4 flex items-center justify-center gap-2 py-3.5 px-4 bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white rounded-xl text-sm font-semibold transition shadow-md shadow-blue-600/25 disabled:opacity-50 active:scale-[0.99]"
           >
             {loading ? (
               <>

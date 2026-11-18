@@ -93,7 +93,7 @@ export const TopBar: React.FC = () => {
               } disabled:opacity-50`}
             >
               {isCurrentLoading ? (
-                <Loader2 className="w-3 h-3 animate-spin text-teal-600" />
+                <Loader2 className="w-3 h-3 animate-spin text-blue-600" />
               ) : (
                 <Icon className={`w-3.5 h-3.5 ${isActive ? '' : 'text-slate-500'}`} />
               )}

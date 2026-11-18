@@ -93,12 +93,12 @@ export const PatientDashboard: React.FC = () => {
   return (
     <div className="space-y-8">
       {/* Welcome Banner */}
-      <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-3xl p-8 text-white shadow-xl relative overflow-hidden">
-        <div className="absolute right-0 top-0 bottom-0 w-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-blue-950 rounded-3xl p-8 text-white shadow-xl relative overflow-hidden border border-blue-900/30">
+        <div className="absolute right-0 top-0 bottom-0 w-96 bg-blue-500/15 rounded-full blur-3xl pointer-events-none"></div>
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-xs font-semibold mb-3 border border-teal-500/30">
-              <span className="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-cyan-300 text-xs font-semibold mb-3 border border-blue-500/30">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
               Patient Portal &bull; {(user as any)?.patient_code || 'PAT-DEMO'}
             </div>
             <h2 className="text-2xl font-bold tracking-tight">
@@ -108,10 +108,10 @@ export const PatientDashboard: React.FC = () => {
               Your health records are encrypted with AES-256-GCM. You maintain complete consent control.
             </p>
           </div>
-          <div className="flex items-center gap-4 text-xs font-mono bg-slate-800/80 p-3 rounded-2xl border border-slate-700/60">
+          <div className="flex items-center gap-4 text-xs font-mono bg-slate-900/80 p-3.5 rounded-2xl border border-slate-700/60 shadow-inner">
             <div>
               <span className="text-slate-400 block text-[10px]">Blood Group</span>
-              <span className="font-bold text-teal-400">{(user as any)?.blood_type || 'O+'}</span>
+              <span className="font-bold text-cyan-400">{(user as any)?.blood_type || 'O+'}</span>
             </div>
             <div className="w-px h-6 bg-slate-700"></div>
             <div>

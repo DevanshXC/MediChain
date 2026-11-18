@@ -29,12 +29,12 @@ const INITIAL_DEMO_ACCOUNTS = [
     address: '0x70997970C51812dc3A010C7d01b50e0d17dc79C8',
     privateKey: '0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d',
     icon: Heart,
-    gradient: 'from-emerald-500 to-green-600',
-    lightBg: 'bg-emerald-500/10',
-    textColor: 'text-emerald-400',
-    borderColor: 'border-emerald-500/20',
-    hoverBorder: 'hover:border-emerald-400/50',
-    btnBg: 'bg-emerald-500 hover:bg-emerald-400',
+    gradient: 'from-blue-600 to-cyan-500',
+    lightBg: 'bg-blue-500/10',
+    textColor: 'text-cyan-400',
+    borderColor: 'border-blue-500/20',
+    hoverBorder: 'hover:border-blue-400/50',
+    btnBg: 'bg-blue-600 hover:bg-blue-500',
     targetRoute: '/patient/dashboard',
   },
   {
@@ -44,12 +44,12 @@ const INITIAL_DEMO_ACCOUNTS = [
     address: '0x90F79bf6EB2c4f870365E785982E1f101E93b906',
     privateKey: '0x7c852118294e51e653712a81e05800f419141751be58f605c371e15141b007a6',
     icon: Stethoscope,
-    gradient: 'from-blue-500 to-indigo-600',
-    lightBg: 'bg-blue-500/10',
-    textColor: 'text-blue-400',
-    borderColor: 'border-blue-500/20',
-    hoverBorder: 'hover:border-blue-400/50',
-    btnBg: 'bg-blue-500 hover:bg-blue-400',
+    gradient: 'from-indigo-500 to-blue-600',
+    lightBg: 'bg-indigo-500/10',
+    textColor: 'text-indigo-400',
+    borderColor: 'border-indigo-500/20',
+    hoverBorder: 'hover:border-indigo-400/50',
+    btnBg: 'bg-indigo-600 hover:bg-indigo-500',
     targetRoute: '/doctor/dashboard',
   },
   {
@@ -64,7 +64,7 @@ const INITIAL_DEMO_ACCOUNTS = [
     textColor: 'text-purple-400',
     borderColor: 'border-purple-500/20',
     hoverBorder: 'hover:border-purple-400/50',
-    btnBg: 'bg-purple-500 hover:bg-purple-400',
+    btnBg: 'bg-purple-600 hover:bg-purple-500',
     targetRoute: '/hospital/dashboard',
   },
   {
@@ -79,7 +79,7 @@ const INITIAL_DEMO_ACCOUNTS = [
     textColor: 'text-amber-400',
     borderColor: 'border-amber-500/20',
     hoverBorder: 'hover:border-amber-400/50',
-    btnBg: 'bg-amber-500 hover:bg-amber-400',
+    btnBg: 'bg-amber-600 hover:bg-amber-500',
     targetRoute: '/admin/dashboard',
   },
 ];
@@ -196,15 +196,15 @@ export const Login: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0B1120] relative overflow-hidden flex font-sans">
+    <div className="min-h-screen bg-[#070D1E] relative overflow-hidden flex font-sans">
       {/* Animated gradient orbs */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-teal-500/[0.07] blur-[120px] animate-pulse" />
+        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-blue-600/[0.12] blur-[140px] animate-pulse" />
         <div
-          className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-blue-500/[0.05] blur-[120px] animate-pulse"
+          className="absolute -bottom-40 -right-40 w-[550px] h-[550px] rounded-full bg-cyan-500/[0.08] blur-[140px] animate-pulse"
           style={{ animationDelay: '1s' }}
         />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-purple-500/[0.04] blur-[100px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] rounded-full bg-indigo-600/[0.06] blur-[100px]" />
       </div>
 
       {/* Grid pattern overlay */}
@@ -221,12 +221,12 @@ export const Login: React.FC = () => {
         <div>
           {/* Logo */}
           <div className="flex items-center gap-3 mb-14">
-            <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center shadow-lg shadow-teal-500/25">
+            <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center shadow-lg shadow-blue-500/25">
               <Activity className="w-6 h-6 text-white" />
             </div>
             <div>
               <span className="text-xl font-bold text-white tracking-tight">MediChain</span>
-              <span className="block text-[10px] text-teal-400 font-semibold tracking-[0.2em] uppercase">
+              <span className="block text-[10px] text-cyan-400 font-semibold tracking-[0.2em] uppercase">
                 Decentralized Healthcare
               </span>
             </div>
@@ -236,7 +236,7 @@ export const Login: React.FC = () => {
           <h1 className="text-4xl xl:text-5xl font-extrabold text-white leading-tight tracking-tight mb-6">
             Your Health Data,
             <br />
-            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-cyan-300 bg-clip-text text-transparent">
               Your Rules.
             </span>
           </h1>
@@ -271,7 +271,7 @@ export const Login: React.FC = () => {
             { value: 'Solidity', label: 'Smart Contracts' },
           ].map((s) => (
             <div key={s.label}>
-              <p className="text-lg font-bold text-teal-400">{s.value}</p>
+              <p className="text-lg font-bold text-cyan-400">{s.value}</p>
               <p className="text-[11px] text-slate-500 mt-0.5">{s.label}</p>
             </div>
           ))}
@@ -283,7 +283,7 @@ export const Login: React.FC = () => {
         <div className="w-full max-w-[500px] space-y-5">
           {/* Mobile logo */}
           <div className="lg:hidden flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center shadow-lg shadow-teal-500/25">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center shadow-lg shadow-blue-500/25">
               <Activity className="w-5 h-5 text-white" />
             </div>
             <span className="text-xl font-bold text-white tracking-tight">MediChain</span>
@@ -325,7 +325,7 @@ export const Login: React.FC = () => {
                 type="button"
                 onClick={connectWallet}
                 disabled={isConnecting}
-                className="w-full flex items-center justify-center gap-3 py-3.5 px-4 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-400 hover:to-teal-500 active:scale-[0.99] text-white rounded-xl text-sm font-semibold transition-all shadow-lg shadow-teal-500/20 disabled:opacity-70 disabled:cursor-wait"
+                className="w-full flex items-center justify-center gap-3 py-3.5 px-4 bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 active:scale-[0.99] text-white rounded-xl text-sm font-semibold transition-all shadow-lg shadow-blue-600/30 disabled:opacity-70 disabled:cursor-wait"
               >
                 {isConnecting ? (
                   <>
@@ -343,25 +343,25 @@ export const Login: React.FC = () => {
               <div className="space-y-3.5">
                 {/* Recognized Account Card */}
                 {walletInfo?.registered ? (
-                  <div className="p-3.5 bg-teal-500/10 border border-teal-500/20 rounded-2xl space-y-1.5">
+                  <div className="p-3.5 bg-blue-500/10 border border-blue-500/20 rounded-2xl space-y-1.5">
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-1.5 text-xs text-teal-400 font-semibold">
+                      <div className="flex items-center gap-1.5 text-xs text-cyan-400 font-semibold">
                         <UserCheck className="w-3.5 h-3.5" />
                         <span>{walletInfo.name}</span>
                       </div>
-                      <span className="capitalize px-2 py-0.5 rounded-md bg-teal-500/20 text-teal-300 font-bold text-[10px]">
+                      <span className="capitalize px-2 py-0.5 rounded-md bg-blue-500/20 text-cyan-300 font-bold text-[10px]">
                         {walletInfo.role}
                       </span>
                     </div>
                     <div className="flex items-center justify-between text-[11px] text-slate-400 font-mono">
                       <span>{address ? `${address.slice(0, 10)}...${address.slice(-6)}` : ''}</span>
-                      <span className="capitalize text-teal-400/90">{walletInfo.status}</span>
+                      <span className="capitalize text-cyan-400/90">{walletInfo.status}</span>
                     </div>
                   </div>
                 ) : (
                   <div className="p-3 bg-white/[0.03] border border-white/[0.08] rounded-xl text-xs text-slate-300 font-mono flex items-center justify-between">
                     <span className="text-slate-400">Connected:</span>
-                    <span className="font-semibold text-teal-400">
+                    <span className="font-semibold text-cyan-400">
                       {address ? `${address.slice(0, 10)}...${address.slice(-6)}` : ''}
                     </span>
                   </div>
@@ -371,7 +371,7 @@ export const Login: React.FC = () => {
                   type="button"
                   onClick={handleSignIn}
                   disabled={loading}
-                  className="w-full flex items-center justify-center gap-2 py-3.5 px-4 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-400 hover:to-teal-500 active:scale-[0.99] text-white rounded-xl text-sm font-semibold transition-all shadow-lg shadow-teal-500/20 disabled:opacity-60 disabled:cursor-wait"
+                  className="w-full flex items-center justify-center gap-2 py-3.5 px-4 bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 active:scale-[0.99] text-white rounded-xl text-sm font-semibold transition-all shadow-lg shadow-blue-600/30 disabled:opacity-60 disabled:cursor-wait"
                 >
                   {loading ? (
                     <>
@@ -392,7 +392,7 @@ export const Login: React.FC = () => {
             <div className="mt-4 text-center">
               <p className="text-xs text-slate-500">
                 Don't have an account?{' '}
-                <Link to="/register" className="font-semibold text-teal-400 hover:text-teal-300 transition">
+                <Link to="/register" className="font-semibold text-cyan-400 hover:text-cyan-300 transition">
                   Register here
                 </Link>
               </p>
@@ -403,7 +403,7 @@ export const Login: React.FC = () => {
           <div className="bg-white/[0.03] border border-white/[0.06] backdrop-blur-xl rounded-3xl p-5 sm:p-6">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+                <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
                   <Sparkles className="w-3.5 h-3.5 text-white" />
                 </div>
                 <div>
@@ -411,7 +411,7 @@ export const Login: React.FC = () => {
                   <p className="text-[10px] text-slate-400">Live profiles from database</p>
                 </div>
               </div>
-              <span className="text-[9px] px-2.5 py-1 rounded-full bg-teal-500/10 text-teal-400 font-bold border border-teal-500/20 uppercase tracking-wider">
+              <span className="text-[9px] px-2.5 py-1 rounded-full bg-blue-500/10 text-cyan-400 font-bold border border-blue-500/20 uppercase tracking-wider">
                 1-Click
               </span>
             </div>

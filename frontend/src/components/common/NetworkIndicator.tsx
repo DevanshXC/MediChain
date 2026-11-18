@@ -14,13 +14,13 @@ export const NetworkIndicator: React.FC = () => {
     <div
       className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium border ${
         isLocal
-          ? 'bg-teal-50 text-teal-800 border-teal-200'
+          ? 'bg-blue-50 text-blue-800 border-blue-200'
           : 'bg-amber-50 text-amber-800 border-amber-200'
       }`}
     >
       {isLocal ? (
         <>
-          <Globe className="w-3.5 h-3.5 text-teal-600" />
+          <Globe className="w-3.5 h-3.5 text-blue-600" />
           <span>{CHAIN_NAME} ({CHAIN_ID})</span>
         </>
       ) : (

@@ -49,17 +49,17 @@ export const DoctorDashboard: React.FC = () => {
   return (
     <div className="space-y-8">
       {/* Doctor Header Banner */}
-      <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-teal-950 rounded-3xl p-8 text-white shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-blue-950 rounded-3xl p-8 text-white shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border border-blue-900/30">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-xs font-semibold mb-3 border border-teal-500/30">
-            <Stethoscope className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-cyan-300 text-xs font-semibold mb-3 border border-blue-500/30">
+            <Stethoscope className="w-3.5 h-3.5 text-cyan-400" />
             Physician Portal &bull; {(user as any)?.doctor_code || 'DOC-DEMO'}
           </div>
           <h2 className="text-2xl font-bold tracking-tight">
             {(user as any)?.first_name ? `Dr. ${(user as any).first_name} ${(user as any).last_name}` : 'Doctor Dashboard'}
           </h2>
           <p className="text-xs text-slate-300 mt-1">
-            Specialization: <strong className="text-teal-400">{(user as any)?.specialization || 'Cardiology / Internal Medicine'}</strong>
+            Specialization: <strong className="text-cyan-400">{(user as any)?.specialization || 'Cardiology / Internal Medicine'}</strong>
             {' '}&bull; License: {(user as any)?.license_number || 'LIC-VERIFIED'}
           </p>
         </div>
@@ -67,16 +67,16 @@ export const DoctorDashboard: React.FC = () => {
         <div className="flex items-center gap-3">
           <Link
             to="/doctor/search"
-            className="flex items-center gap-2 px-4 py-2.5 bg-teal-600 hover:bg-teal-500 text-white rounded-xl text-xs font-semibold shadow-md transition"
+            className="flex items-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-semibold shadow-md shadow-blue-500/25 transition"
           >
             <Search className="w-4 h-4" />
             Find Patients
           </Link>
           <Link
             to="/doctor/upload"
-            className="flex items-center gap-2 px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-semibold border border-slate-700 transition"
+            className="flex items-center gap-2 px-4 py-2.5 bg-slate-800/80 hover:bg-slate-700 text-white rounded-xl text-xs font-semibold border border-slate-700 transition"
           >
-            <Upload className="w-4 h-4 text-teal-400" />
+            <Upload className="w-4 h-4 text-cyan-400" />
             Upload Record
           </Link>
         </div>

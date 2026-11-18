@@ -41,10 +41,10 @@ export const AdminDashboard: React.FC = () => {
   return (
     <div className="space-y-8">
       {/* Admin Header */}
-      <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-3xl p-8 text-white shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-blue-950 rounded-3xl p-8 text-white shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border border-blue-900/30">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-xs font-semibold mb-3 border border-teal-500/30">
-            <ShieldCheck className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-cyan-300 text-xs font-semibold mb-3 border border-blue-500/30">
+            <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
             Platform Root Administration
           </div>
           <h2 className="text-2xl font-bold tracking-tight">System Overview & Governance</h2>
@@ -59,7 +59,7 @@ export const AdminDashboard: React.FC = () => {
             className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold shadow-md transition ${
               pendingApprovals > 0
                 ? 'bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold animate-pulse'
-                : 'bg-teal-600 hover:bg-teal-500 text-white'
+                : 'bg-blue-600 hover:bg-blue-500 text-white shadow-blue-500/25'
             }`}
           >
             <Clock className="w-4 h-4" />
@@ -67,9 +67,9 @@ export const AdminDashboard: React.FC = () => {
           </Link>
           <Link
             to="/admin/blockchain"
-            className="flex items-center gap-2 px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-semibold border border-slate-700 transition"
+            className="flex items-center gap-2 px-4 py-2.5 bg-slate-800/80 hover:bg-slate-700 text-white rounded-xl text-xs font-semibold border border-slate-700 transition"
           >
-            <Layers className="w-4 h-4 text-teal-400" />
+            <Layers className="w-4 h-4 text-cyan-400" />
             Ledger Activity
           </Link>
         </div>
@@ -78,7 +78,7 @@ export const AdminDashboard: React.FC = () => {
       {/* 4 Key Stat Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex items-center gap-4">
-          <div className="w-12 h-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center shrink-0">
+          <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
             <Users className="w-6 h-6" />
           </div>
           <div>

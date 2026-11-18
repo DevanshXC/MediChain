@@ -140,35 +140,35 @@ export const ProfileSettings: React.FC = () => {
       </div>
 
       {/* Identity Card */}
-      <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 text-white shadow-xl">
+      <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 rounded-2xl p-6 text-white shadow-xl border border-blue-900/30">
         <div className="flex items-center gap-4 mb-4">
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-teal-500/30">
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/30">
             {(profile.first_name || profile.name || user?.role || 'M').charAt(0).toUpperCase()}
           </div>
           <div>
             <p className="text-lg font-bold">
               {profile.full_name || profile.name || `${profile.first_name || ''} ${profile.last_name || ''}`.trim() || 'User'}
             </p>
-            <p className="text-xs text-teal-300 font-medium">
+            <p className="text-xs text-cyan-300 font-medium">
               {profile.patient_code || profile.doctor_code || profile.hospital_code || 'MediChain ID'}
             </p>
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div className="flex items-center gap-2 text-xs text-slate-300">
-            <Wallet className="w-3.5 h-3.5 text-teal-400" />
+            <Wallet className="w-3.5 h-3.5 text-cyan-400" />
             <span className="font-mono truncate">{profile.wallet_address || user?.walletAddress || '—'}</span>
           </div>
           <div className="flex items-center gap-2 text-xs text-slate-300">
-            <Fingerprint className="w-3.5 h-3.5 text-teal-400" />
+            <Fingerprint className="w-3.5 h-3.5 text-cyan-400" />
             <span>User ID: #{profile.id || user?.id}</span>
           </div>
           <div className="flex items-center gap-2 text-xs text-slate-300">
-            <BadgeCheck className="w-3.5 h-3.5 text-teal-400" />
+            <BadgeCheck className="w-3.5 h-3.5 text-cyan-400" />
             <span className="capitalize">Status: {profile.status || user?.status}</span>
           </div>
           <div className="flex items-center gap-2 text-xs text-slate-300">
-            <Shield className="w-3.5 h-3.5 text-teal-400" />
+            <Shield className="w-3.5 h-3.5 text-cyan-400" />
             <span className="capitalize">Role: {profile.role || user?.role}</span>
           </div>
         </div>
@@ -262,7 +262,7 @@ export const ProfileSettings: React.FC = () => {
             <button
               onClick={handleSave}
               disabled={saving}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-teal-600 hover:bg-teal-500 active:bg-teal-700 text-white rounded-xl text-sm font-semibold shadow-md shadow-teal-600/20 transition disabled:opacity-60 disabled:cursor-wait"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white rounded-xl text-sm font-semibold shadow-md shadow-blue-600/25 transition disabled:opacity-60 disabled:cursor-wait"
             >
               {saving ? (
                 <>
@@ -300,7 +300,7 @@ const InputField: React.FC<{
       type={type}
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-400 transition"
+      className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400 transition"
     />
   </div>
 );
@@ -321,7 +321,7 @@ const SelectField: React.FC<{
     <select
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-400 transition appearance-none"
+      className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400 transition appearance-none"
     >
       <option value="">Select {label}</option>
       {options.map((opt) => (
