@@ -203,6 +203,23 @@ async function runTests() {
   // TEST 6: Doctor Patient Search & Unauthorized Access Denial
   console.log('\n--- 6. Testing Doctor Search & Access Control Enforcement ---');
   try {
+    // Revoke any existing active permission for this patient to ensure idempotent initial 403 check
+    const existingReqsRes = await fetch(`${BASE_URL}/access/requests`, {
+      headers: { Authorization: `Bearer ${patientAuth.token}` },
+    });
+    const existingReqs = await existingReqsRes.json();
+    if (existingReqs.success && Array.isArray(existingReqs.data)) {
+      for (const req of existingReqs.data) {
+        if (req.status === 'approved') {
+          await fetch(`${BASE_URL}/access/revoke`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${patientAuth.token}` },
+            body: JSON.stringify({ requestId: req.id }),
+          });
+        }
+      }
+    }
+
     const searchRes = await fetch(`${BASE_URL}/patients/search?q=${encodeURIComponent(originalFirstName)}`, {
       headers: { Authorization: `Bearer ${doctorAuth.token}` },
     });
